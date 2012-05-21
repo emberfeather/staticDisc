@@ -1,0 +1,17 @@
+{
+  "author": "Randy Merrill <Zoramite+node@gmail.com> (http://forthedeveloper.com)",
+  "name": "staticDisc",
+  "description": "Static HTML generator for creating self-contained media discs.",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/emberfeather/staticDisc.git"
+  },
+  "main": "bin/staticDisc.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
