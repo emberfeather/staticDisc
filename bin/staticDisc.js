@@ -35,8 +35,8 @@ var settings = {
 		bluray: 25000000000
 	},
 	types: {
-		image: []
-
+		image: [],
+		valid: /\.(cr2|jpg|jpeg|mov|png)$/
 	}
 };
 
@@ -51,8 +51,14 @@ sequence.then(function(next, error) {
 });
 
 // Prune out any invalid files
-sequence.then(function(next, error) {
-	fs.readdir(argv.source, next);
+sequence.then(function(next, error, files) {
+	for(var i = files.length - 1; i >= 0; i--) {
+		if(!files[i].match(settings.types.valid)) {
+			files.splice(i, 1);
+		}
+	}
+
+	next(error, files);
 });
 
 // Allow for sorting
